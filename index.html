@@ -57,6 +57,7 @@
       h1 {
         font-family: 'Overpass Mono', 'Courier New', Courier, monospace;
         font-size: 2rem;
+        text-align: center;
       }
 
       h1 span {
@@ -65,16 +66,21 @@
       }
 
       section {
-        height: 50vh;
+        min-height: 50vh;
         background-color: #00796b;
         padding: 2.5rem;
       }
 
       .notice {
         flex: 1;
+        min-height: 30vh;
         display: flex;
         align-items: center;
         justify-content: center;
+      }
+
+      .extrainfo {
+        display: none;
       }
 
       article {
@@ -150,6 +156,11 @@
         text-align: center;
       }
 
+      @media (min-width: 361px) {
+        .extrainfo {
+          display: initial;
+        }
+      }
       @media (min-width: 768px) {
         h1 {
           font-size: 3.5rem;
@@ -165,6 +176,20 @@
           font-size: 1rem;
         }
       }
+
+      @media (orientation: landscape) and (max-height: 500px) and (min-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+      }
+      @media (orientation: landscape) and (max-height: 500px) {
+        body {
+          flex-flow: row nowrap;
+        }
+        article {
+          margin-top: 0;
+        }
+      }
     </style>
   </head>
   <body>
@@ -176,10 +201,19 @@
         <article>
           <h2>Release on Fridays (RoF) es...</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-            blanditiis debitis veniam iusto vel dignissimos, molestias tempore,
-            vero quod officia, omnis beatae nostrum. Tenetur optio, odio
-            praesentium dignissimos distinctio dicta!
+            Es un <strong> podcast </strong> en el que compartiré las
+            experiencias que he adquirido a lo largo de mi carrera como
+            desarrollador.
+            <span class="extrainfo"
+              >Habrán invitados ocasionales, y temas que no son directamente
+              relacionados con la programación pero que me llaman la atención.
+              Es algo para expresarme, para enseñar y para aprender.
+              <strong>No es un programa de opiniones</strong> donde tienes que
+              estar de acuerdo con cada palabra que salga de mi boca, pero si
+              siento de decir algo, pues lo diré. <br />Todo realmente inicio
+              hace años, pero no fue sino hasta finales del año pasado cuando
+              decidí trabajar para iniciar este proyecto...</span
+            >
           </p>
           <a
             href="https://taverasmisael.com/blog/anunciando-mi-podcast"
